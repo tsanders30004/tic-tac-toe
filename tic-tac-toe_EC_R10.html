@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Tic Tac Toe</title>
+	<script src="jquery.js"></script>
+	<style>
+	body {
+		font-family: sans-serif;
+		font-size: 2em;
+	}
+	.row {
+		clear: both;
+	}
+	.cell {
+		float: 		left;
+		height: 		100px;
+		width:		100px;
+		text-align:	center;
+	}
+	.cell:hover {
+		box-shadow: 8px 8px 10px #888888;
+	}
+	.top {
+		border-top-style: 	solid;
+		border-top-width: 	2px;
+		border-top-color:	#555555;
+	}
+	.left {
+		border-left-style: 	solid;
+		border-left-width: 	2px;
+		border-left-color:	#555555;
+	}
+	#grid {
+		padding: 2em;
+		margin: auto;
+	}
+	.myButton {
+		background-color: #F0F0F0;
+		width: 80px;
+		margin: 10px;
+		height: 80px;
+		font-size: 1.5em;
+		border-radius: 5px;
+	}
+	</style>
+
+	<script>
+	"use strict";
+
+	$(document).ready(function(){
+		var clickCount = 0; /* even = O; odd = X */
+
+		$('.myButton').click(function(){
+			// debugger;
+
+			if ($(this).val() === ' ') {
+				if (clickCount % 2 === 1) {	/* i.e., X */
+					// $(this).val('X');
+					// $(this).val('X');
+					$(this).hide();
+					$(this).val(' ');
+					$(this).fadeIn(5000);
+					$(this).val('X');
+					$(this).css('background-color', 'rgb(14, 151, 192)');
+					$(this).css('transform', 'rotate(-3deg)');
+				} else {
+					$(this).val('O');
+					$(this).css('background-color', 'rgb(210,160,43)');
+					$(this).css('transform', 'rotate(3deg)');
+				}
+				clickCount++;
+			}
+		});
+	});
+	</script>
+</head>
+
+<body>
+	<div id="grid">
+		<div class="row">
+			<div class="cell">
+				<input type="button" name="button6" class="myButton" value=" ">
+			</div>
+			<div class="cell left">
+				<input type="button" name="button6" class="myButton" value=" ">
+			</div>
+			<div class="cell left">
+				<input type="button" name="button6" class="myButton" value=" ">
+			</div>
+		</div>
+		<div class="row">
+			<div class="cell top">
+				<input type="button" name="button6" class="myButton" value=" ">
+			</div>
+			<div class="cell top left">
+				<input type="button" name="button6" class="myButton" value=" ">
+			</div>
+			<div class="cell top left">
+				<input type="button" name="button6" class="myButton" value=" ">
+			</div>
+		</div>
+		<div class="row">
+			<div class="cell top">
+				<input type="button" name="button6" class="myButton" value=" ">
+			</div>
+			<div class="cell top left">
+				<input type="button" name="button6" class="myButton" value=" ">
+			</div>
+			<div class="cell top left">
+				<input type="button" name="button6" class="myButton" value=" ">
+			</div>
+		</div>
+	</div>
+</body>
+</html>
